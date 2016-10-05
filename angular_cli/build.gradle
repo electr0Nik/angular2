@@ -1,0 +1,20 @@
+
+// inherit defaults from project root
+
+plugins {
+	id "com.moowork.node" version "0.13"
+}
+
+// apply gradle plugins 
+apply from: "$rootDir/gradle/plugins/gradle_node_plugin.gradle"
+
+// apply tasks
+apply from: "$rootDir/gradle/tasks/gradle_node_tasks.gradle"
+
+def final activeProfile = project.hasProperty('prod') ? 'prod' : 'dev'
+
+if(activeProfile == 'prod') {
+	println 'todo'
+} else {
+	println 'todo'
+}

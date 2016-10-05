@@ -3,6 +3,9 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
 
+subprojects {
+    apply plugin: 'base'
+}
 
 // define wrapper version to 3.X
 task wrapper(type: Wrapper) {

@@ -1,0 +1,19 @@
+
+def final extWorkDir = file("${project.buildDir}/nodejs")
+def final extNodeModulesdir = file("${project.projectDir}")
+
+println "$project :: $extWorkDir :: $extNodeModulesdir"
+node {
+    version = '6.5.0'
+    npmVersion = '3.10.3'
+
+    // If true, it will download node using above parameters.
+    // If false, it will try to use globally installed node.
+    download = true
+
+    // Set the work directory for unpacking node
+    workDir = extWorkDir
+
+    // Set the work directory where node_modules should be located
+    nodeModulesDir = extNodeModulesdir
+}
