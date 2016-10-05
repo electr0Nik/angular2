@@ -1,0 +1,11 @@
+// root project
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+
+// define wrapper version to 3.X
+task wrapper(type: Wrapper) {
+	description = 'Generates gradlew[.bat] scripts'
+	gradleVersion = '3.1'
+}

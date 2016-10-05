@@ -1,3 +1,11 @@
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+*.iml
+
+## Directory-based project format:
+.idea/
+
+
+# Gradle
 .gradle
 build/
 
@@ -12,3 +20,13 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+
+# add generated node and npm folder
+*/node_modules/
+*/dist/
+*/typings/
+
+# add generated js and map.js files
+*/src/app/*.js
+*/src/app/*.js.map
