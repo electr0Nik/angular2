@@ -1,2 +1,3 @@
-include 'getting_started'
-include 'angular_cli'
+//include 'getting_started'
+//include 'angular_cli'
+include 'heros_tutorial'
