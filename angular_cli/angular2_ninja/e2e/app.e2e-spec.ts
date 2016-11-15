@@ -1,10 +1,10 @@
-import { AngularCliPage } from './app.po';
+import { Angular2NinjaPage } from './app.po';
 
-describe('angular-cli App', function() {
-  let page: AngularCliPage;
+describe('angular2-ninja App', function() {
+  let page: Angular2NinjaPage;
 
   beforeEach(() => {
-    page = new AngularCliPage();
+    page = new Angular2NinjaPage();
   });
 
   it('should display message saying app works', () => {

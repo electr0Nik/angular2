@@ -1,0 +1,22 @@
+<h1>
+	{{title}}
+</h1>
+<hr/>
+
+<p>{{list() | json}}</p>
+
+<div *ngIf="races.length > 0">
+	<h2>Races</h2>
+	<div>
+		<p>{{races?.length}} Races</p>
+		<ul>
+			<li *ngFor="let race of races">{{race.name}}</li>
+		</ul>
+	</div>
+</div>
+<button (click)="refreshRaces()">Refresh the Races list</button>
+
+<hr/>
+<app-ponies-component (newRaceAvailable)="onNewRace()" initDirective pony="init">
+	App ponies Component Loading...
+</app-ponies-component>

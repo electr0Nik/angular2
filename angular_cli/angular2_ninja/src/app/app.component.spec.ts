@@ -3,7 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App: AngularCli', () => {
+xdescribe('App: Angular2Ninja', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [

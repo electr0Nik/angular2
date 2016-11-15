@@ -1,15 +1,6 @@
-# General 
-Folder was created with angular-cli [Angular CLI](https://github.com/angular/angular-cli)
-``` ng new [app_name] ```
+# Angular2Ninja
 
-# Infos
-Please refer to [Angular CLI GitHub Page](https://github.com/angular/angular-cli) for more information
-
-
-# Auto generated #
-# AngularCli
-
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -1,0 +1,31 @@
+<div *ngIf="ponies.length > 0">
+	<p>{{ponies.length}} Ponies</p>
+	<ul>
+		<li *ngFor="let pony of ponies; let isEven = even" [style.color]="isEven?'blue':'green'">{{pony.name}}</li>
+	</ul>
+</div>
+
+<div>
+	<button (click)="refreshPonies()">Refresh Ponies</button>
+</div>
+
+<div loggable logText="hello World">
+	<p>
+		Testing FromNow pipe with date: 14.11.2016 00:00 --> {{today | fromNow:false}}
+	</p>
+</div>
+
+<div loggable logText="{{randomText}}">
+	<input logText="{{random.value}}" loggable #random/>
+</div>
+
+<hr/>
+
+<div>
+	<h2>{{title}}</h2>
+	<app-pony-coponent *ngFor="let currentPony of ponies" [pony]="currentPony"></app-pony-coponent>
+
+	<h3>Select</h3>
+	<app-selectable-pony *ngFor="let pony of ponies" [pony]="pony" (ponySelected)="betOnPony($event)" (furiSelected)="printFuriRoaard($event)"></app-selectable-pony>
+
+</div>
