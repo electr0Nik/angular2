@@ -1,14 +1,37 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { PoniesComponent } from './ponies/ponies.component';
 
-xdescribe('App: Angular2Ninja', () => {
+// satisfy test case
+import { FromNowPipe } from './pipes/from.now.pipe';
+import { SimpleTextDirective } from './directives/simple.text.directive';
+import { PonyComponent } from './pony/pony.component';
+import { SelectablePonyComponent } from "./ponies/selectable.pony.component";
+import { ApiService } from './service/api.service';
+import { RaceService } from './service/race.service';
+
+
+
+
+describe('App: Angular2Ninja', () => {
+
+  // add all posible dependencies to satisfy component initialisation
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        PoniesComponent,
+        FromNowPipe,
+        SimpleTextDirective,
+        PonyComponent,
+        SelectablePonyComponent
       ],
+      providers: [
+        RaceService,
+        ApiService
+      ]
     });
   });
 

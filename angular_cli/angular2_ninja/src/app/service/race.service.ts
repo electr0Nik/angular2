@@ -8,7 +8,7 @@ export class RaceService {
 
   constructor(private apiService: ApiService) { }
 
-  list(): Array<any> {
+  list() {
     return this.apiService.get('/races');
   }
 

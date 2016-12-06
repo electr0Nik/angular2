@@ -2,8 +2,10 @@
 
 export class ApiService {
 
-  get(path: string): any {
-    // TODO
+  // TODO
+  // return values from api
+  get(path: string) {
+    return undefined;
   }
 
 }

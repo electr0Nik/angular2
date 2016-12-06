@@ -19,7 +19,8 @@ import { FromNowPipe } from './pipes/from.now.pipe'
 
 // custom directives
 import { SimpleTextDirective } from './directives/simple.text.directive'
-import { OnInitDirective } from './directives/on.init.directive'
+import { OnInitDirective } from './directives/on.init.directive';
+import { RaceComponent } from './race/race.component'
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { OnInitDirective } from './directives/on.init.directive'
     SelectablePonyComponent,
     FromNowPipe,
     SimpleTextDirective,
-    OnInitDirective
+    OnInitDirective,
+    RaceComponent
   ],
   imports: [
     BrowserModule,
