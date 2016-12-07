@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // custom components
@@ -20,7 +20,9 @@ import { FromNowPipe } from './pipes/from.now.pipe'
 // custom directives
 import { SimpleTextDirective } from './directives/simple.text.directive'
 import { OnInitDirective } from './directives/on.init.directive';
-import { RaceComponent } from './race/race.component'
+import { RaceComponent } from './race/race.component';
+import { RegisterFormComponent_T } from './forms/template/register-form.component';
+import { RegisterFormComponent_C } from './forms/code/register-form.component'
 
 
 @NgModule({
@@ -32,11 +34,14 @@ import { RaceComponent } from './race/race.component'
     FromNowPipe,
     SimpleTextDirective,
     OnInitDirective,
-    RaceComponent
+    RaceComponent,
+    RegisterFormComponent_T,
+    RegisterFormComponent_C
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    // ReactiveFormsModule,
     HttpModule
   ],
   providers: [
