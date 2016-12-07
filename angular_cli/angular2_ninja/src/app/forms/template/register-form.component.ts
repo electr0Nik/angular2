@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms'
+
+// import { FormControl, FormGroup } from '@angular/forms';
+import {User} from "../../classes/user";
 
 @Component({
   selector: 'app-register-form-t',
-  templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.scss']
+  templateUrl: 'register-form.component.html',
+  styleUrls: ['register-form.component.scss']
 })
 export class RegisterFormComponent_T implements OnInit {
 
-  password: FormControl;
-
-  form: FormGroup;
+  user: User = new User();
 
   constructor() { }
-
 
   ngOnInit() {
   }
 
-
-  register(user) {
-    console.log(user);
+  register(): void {
+    console.log(this.user);
   }
 
 }

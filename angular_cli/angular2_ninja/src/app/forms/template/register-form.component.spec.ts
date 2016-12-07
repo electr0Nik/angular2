@@ -5,7 +5,8 @@ import { DebugElement } from '@angular/core';
 
 import { RegisterFormComponent_T } from './register-form.component';
 
-describe('RegisterFormComponent_T', () => {
+// exclude for now
+xdescribe('RegisterFormComponent_T', () => {
   let component: RegisterFormComponent_T;
   let fixture: ComponentFixture<RegisterFormComponent_T>;
 

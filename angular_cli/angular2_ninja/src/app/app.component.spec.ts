@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import {TestBed, async, inject, ComponentFixture} from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { PoniesComponent } from './ponies/ponies.component';
 
@@ -9,16 +9,14 @@ import { FromNowPipe } from './pipes/from.now.pipe';
 import { SimpleTextDirective } from './directives/simple.text.directive';
 import { PonyComponent } from './pony/pony.component';
 import { RaceComponent } from './race/race.component';
-import { SelectablePonyComponent } from "./ponies/selectable.pony.component";
+import { SelectablePonyComponent } from './ponies/selectable.pony.component';
 import { ApiService } from './service/api.service';
 import { RaceService } from './service/race.service';
+import {RegisterFormComponent_T} from './forms/template/register-form.component';
 
+describe('App: Angular2Ninja', () => {
 
-
-// exclude for now
-xdescribe('App: Angular2Ninja', () => {
-
-  // add all posible dependencies to satisfy component initialisation
+  // add all possible dependencies to satisfy component initialisation
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -28,12 +26,21 @@ xdescribe('App: Angular2Ninja', () => {
         SimpleTextDirective,
         PonyComponent,
         RaceComponent,
-        SelectablePonyComponent
+        SelectablePonyComponent,
+        RegisterFormComponent_T
       ],
       providers: [
         RaceService,
         ApiService
       ]
+    });
+
+    TestBed.overrideComponent(RegisterFormComponent_T, {
+      set: {
+        template: `
+          <h2>fake-component</h2>
+         `
+      }
     });
   });
 

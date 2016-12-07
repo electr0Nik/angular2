@@ -1,12 +1,12 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { RaceComponent } from './race.component';
 import { PonyComponent } from '../pony/pony.component';
 
-import { By } from "@angular/platform-browser";
-//import {By} from "protractor";
-//import By = webdriver.By;
+import { By } from '@angular/platform-browser';
+// import {By} from 'protractor';
+// import By = webdriver.By;
 
 
 describe('Component: Race', () => {
@@ -71,7 +71,7 @@ describe('Component: Race', () => {
     // given a component instance
     let raceComponent = fixture.componentInstance;
     // initialize
-    raceComponent.race = {name: 'Tokio'}
+    raceComponent.race = {name: 'Tokio'};
 
     // when we trigger the change detection
     fixture.detectChanges();

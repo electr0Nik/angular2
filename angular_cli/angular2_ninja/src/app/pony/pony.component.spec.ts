@@ -1,6 +1,6 @@
 
 
-import { TestBed } from '@angular/core/testing'
+import { TestBed } from '@angular/core/testing';
 
 import { PonyComponent } from './pony.component';
 
@@ -23,7 +23,7 @@ describe('creating test suite for pony component', () => {
     const ponyComponent = fixture.componentInstance;
 
     // initialize component with pony as input
-    ponyComponent.pony = { id: 1, name: 'Awesome-oooh' }
+    ponyComponent.pony = { id: 1, name: 'Awesome-oooh' };
 
     // _when_
     // use component representation to trigger changes

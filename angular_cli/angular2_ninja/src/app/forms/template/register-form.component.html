@@ -4,16 +4,16 @@
   create local variable #userForm
   and give its value to register method
  -->
-<form (ngSubmit)="register(userForm.value)" #userForm="ngForm">
+<form (ngSubmit)="register(userForm.value)">
 
   <div>
     <label for="userName">Username</label>
-    <input id="userName" name="userName" ngModel>
+    <input id="userName" name="userName" [(ngModel)]="user.username">
   </div>
 
   <div>
     <label for="password">Password</label>
-    <input id="password" type="password" name="password" ngModel>
+    <input id="password" type="password" name="password" [(ngModel)]="user.password">
   </div>
 
   <button type="submit">Register</button>
