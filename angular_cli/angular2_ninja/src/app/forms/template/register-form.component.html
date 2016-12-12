@@ -4,17 +4,37 @@
   create local variable #userForm
   and give its value to register method
  -->
-<form (ngSubmit)="register(userForm.value)">
+<form (ngSubmit)="register(userForm.value)" #userForm="ngForm">
 
   <div>
     <label for="userName">Username</label>
-    <input id="userName" name="userName" [(ngModel)]="user.username">
+    <input id="userName" name="userName" ngModel required minlength="3" #userName="ngModel">
+    <div *ngIf="userName.control.dirty && userName.control.hasError('required')">
+      Username is required
+    </div>
+    <div *ngIf="userName.control.dirty && userName.control.hasError('minlength')">
+      Username have to be at least 3 chars long!
+    </div>
   </div>
 
   <div>
     <label for="password">Password</label>
-    <input id="password" type="password" name="password" [(ngModel)]="user.password">
+    <input id="password" type="password" name="password" ngModel required minlength="5" #password="ngModel">
+
+    <div *ngIf="password.control.dirty && password.control.hasError('required')">
+      Password is required
+    </div>
+    <div *ngIf="password.control.dirty && password.control.hasError('minlength')">
+      Password have to be at least 5 chars long!
+    </div>
   </div>
 
-  <button type="submit">Register</button>
+  <div>
+    <label for="birthdate">Birth date as Year</label>
+    <input id="birthdate" type="date" name="birthDateAsYear" [formControl]="birthdateAsYearCtrl" [(ngModel)]="user.birthdateAsYear" required>
+    <span *ngIf="birthdateAsYearCtrl.dirty && birthdateAsYearCtrl.hasError('required')">Birth date is required!</span>
+    <span *ngIf="birthdateAsYearCtrl.dirty && birthdateAsYearCtrl.hasError('tooYoung')">You are not old enough!</span>
+  </div>
+
+  <button type="submit" [disabled]="!userForm.valid">Register</button>
 </form>

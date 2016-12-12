@@ -23,6 +23,7 @@ import { OnInitDirective } from './directives/on.init.directive';
 import { RaceComponent } from './race/race.component';
 import { RegisterFormComponent_T } from './forms/template/register-form.component';
 import { RegisterFormComponent_C } from './forms/code/register-form.component'
+import {FormValidator} from "./forms/validator/form.validator";
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { RegisterFormComponent_C } from './forms/code/register-form.component'
   imports: [
     BrowserModule,
     FormsModule,
-    // ReactiveFormsModule,
+    ReactiveFormsModule,
     HttpModule
   ],
   providers: [
@@ -53,7 +54,8 @@ import { RegisterFormComponent_C } from './forms/code/register-form.component'
       provide: RaceService,
       useFactory: (IS_PROD, apiService) => IS_PROD ? new RaceService(apiService) : new RaceServiceMock(),
       deps: ['IS_PROD', ApiService]
-    }
+    },
+    FormValidator,
   ],
   bootstrap: [AppComponent]
 })

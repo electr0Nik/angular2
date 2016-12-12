@@ -1,0 +1,44 @@
+<h2>Sign Up</h2>
+
+<form (ngSubmit)="register_c()" [formGroup]="userForm">
+
+  <div>
+    <label for="username">Username: </label>
+    <input id="username" formControlName="username">
+    <span *ngIf="userNameCtrl.dirty && userNameCtrl.hasError('required')">
+      Username is required!
+    </span>
+    <span *ngIf="userNameCtrl.dirty && userNameCtrl.hasError('minlength')">
+      Username have to be at least 3 chars long
+    </span>
+  </div>
+
+  <div formGroupName="passwordForm">
+    <div>
+      <label for="passWord">Password: </label>
+      <input id="passWord" type="password" formControlName="password"> <span>Strength {{passwordStrength}}</span>
+      <span *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('required')">Password is required!</span>
+      <span *ngIf="passwordCtrl.dirty && passwordCtrl.hasError('minlength')">Password has to be at least 5 chars long.</span>
+    </div>
+
+    <div>
+      <label for="confirm">Confirm Password: </label>
+      <input id="confirm" type="password" formControlName="confirmPassword">
+      <span *ngIf="confirmPasswordCtrl.dirty && confirmPasswordCtrl.hasError('required')">Password is required!</span>
+      <span *ngIf="confirmPasswordCtrl.dirty && confirmPasswordCtrl.hasError('minlength')">Password has to be at least 5 chars long.</span>
+      <span *ngIf="passwordGroup.dirty && passwordGroup.hasError('matchingError')">Your password doesn't match!</span>
+    </div>
+  </div>
+
+
+  <div>
+    <label for="birthDate">Birth date</label>
+    <input id="birthDate" type="date" formControlName="birthDate">
+    <span *ngIf="birthdateCtrl.dirty && birthdateCtrl.hasError('required')">Birth date is required!</span>
+    <span *ngIf="birthdateCtrl.dirty && birthdateCtrl.hasError('tooYoung')">You are not old enough!</span>
+  </div>
+
+  <button type="submit" [disabled]="!userForm.valid">Registrieren</button>
+  <button type="reset" (click)="reset()">Reset</button>
+
+</form>
