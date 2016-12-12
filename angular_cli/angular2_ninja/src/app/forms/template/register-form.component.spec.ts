@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 import { RegisterFormComponent_T } from './register-form.component';
 
@@ -15,6 +15,7 @@ describe('RegisterFormComponent_T', () => {
       ],
       imports: [
         FormsModule,
+        ReactiveFormsModule
       ]
     }).compileComponents();
   }));

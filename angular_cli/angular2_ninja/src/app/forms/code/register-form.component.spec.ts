@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { RegisterFormComponent_C } from './register-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 describe('RegisterFormCodeDrivenComponent', () => {
   let component: RegisterFormComponent_C;
@@ -11,7 +12,8 @@ describe('RegisterFormCodeDrivenComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterFormComponent_C ]
+      declarations: [ RegisterFormComponent_C ],
+      imports: [ ReactiveFormsModule ]
     })
     .compileComponents();
   }));

@@ -17,7 +17,7 @@ export class AppComponent {
     this.races = [{ name: 'London' }, { name: 'Lyon' }];
   }
 
-  list(): Array<any> {
+  list() {
     return this.raceService.list();
   }
 
