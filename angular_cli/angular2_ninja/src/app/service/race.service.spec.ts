@@ -45,7 +45,7 @@ describe('Service: Race Service', () => {
 
 
   /**
-   * implement when using promisses
+   * implement when using promises
    */
   xit('should expect to return list() asynchrone when called', async(() => {
     // raceService.list().then(races => {
@@ -64,7 +64,9 @@ describe('Service: Race Service', () => {
         { name: 'Berlin' },
         { name: 'Prag' }
       ]);
-    expect(_raceService.list().length).toBe(2);
+    let result;
+    _raceService.list().map(res => res.json()).subscribe(data => result = data);
+    expect(result.length).toBe(2);
     expect(apiServiceMock.get).toHaveBeenCalledWith('/races');
   }));
 });

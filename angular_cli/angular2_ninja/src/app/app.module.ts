@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {RouterModule} from "@angular/router";
 
 // custom components
 import { AppComponent } from './app.component';
@@ -25,6 +26,8 @@ import { RegisterFormComponent_T } from './forms/template/register-form.componen
 import { RegisterFormComponent_C } from './forms/code/register-form.component'
 import {FormValidator} from "./forms/validator/form.validator";
 
+import {ROUTES} from "./routes/app.routes";
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,8 @@ import {FormValidator} from "./forms/validator/form.validator";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [
     ApiService,

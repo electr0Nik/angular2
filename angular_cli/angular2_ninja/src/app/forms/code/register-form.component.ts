@@ -22,19 +22,17 @@ export class RegisterFormComponent_C implements OnInit {
   passwordStrength: number = 0;
 
   constructor(builder: FormBuilder) {
-    this.userNameCtrl = builder.control('', Validators.compose([Validators.required, Validators.minLength(3)]));
-    this.passwordCtrl = builder.control('', Validators.compose([Validators.required, Validators.minLength(5)]));
-    this.confirmPasswordCtrl = builder.control('', Validators.compose([Validators.required, Validators.minLength(5)]));
-    this.birthdateCtrl = builder.control('', Validators.compose([Validators.required, FormValidator.isOldEnoughValidator]));
+    this.userNameCtrl = builder.control('', [Validators.required, Validators.minLength(3)]);
+    this.passwordCtrl = builder.control('', [Validators.required, Validators.minLength(5)]);
+    this.confirmPasswordCtrl = builder.control('', [Validators.required, Validators.minLength(5)]);
+    this.birthdateCtrl = builder.control('', [Validators.required, FormValidator.isOldEnoughValidator]);
 
     this.passwordGroup = builder.group(
       {
         password: this.passwordCtrl,
         confirmPassword: this.confirmPasswordCtrl
       },
-      {
-        validator: FormValidator.passwordMatch
-      }
+      {validator: FormValidator.passwordMatch}
     );
 
     this.userForm = builder.group({
